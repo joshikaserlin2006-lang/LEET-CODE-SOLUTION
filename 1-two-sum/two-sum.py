@@ -1,11 +1,11 @@
 class Solution:
     def twoSum(self, nums, target):
-        num_map = {}
+        seen = {}
 
         for i, num in enumerate(nums):
             complement = target - num
 
-            if complement in num_map:
-                return [num_map[complement], i]
+            if complement in seen:
+                return [seen[complement], i]
 
-            num_map[num] = i
+            seen[num] = i
